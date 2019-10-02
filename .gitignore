@@ -51,3 +51,6 @@ docs/_build
 
 # Selenium log
 geckodriver.log
+
+# Sample Videos
+sample_videos/
