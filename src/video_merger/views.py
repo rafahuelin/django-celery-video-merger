@@ -19,7 +19,6 @@ class VideosUploadView(FormView):
             for video_number, video in enumerate(videos, 1):
                 upload_original_videos(video, video_number, destination_folder)
             task = merge_videos.delay(destination_folder)
-            print("After Merge...")
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
