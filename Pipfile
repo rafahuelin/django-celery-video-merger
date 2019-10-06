@@ -13,6 +13,7 @@ django = "*"
 celery = "*"
 django-widget-tweaks = "*"
 moviepy = "*"
+redis = "*"
 
 [requires]
 python_version = "3.6"

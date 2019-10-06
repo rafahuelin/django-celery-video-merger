@@ -1,3 +1,4 @@
+from celery import current_app
 from django.views.generic.edit import FormView
 
 from .forms import VideosUploadForm
@@ -17,7 +18,8 @@ class VideosUploadView(FormView):
             destination_folder = create_destination_folder()
             for video_number, video in enumerate(videos, 1):
                 upload_original_videos(video, video_number, destination_folder)
-            merge_videos(destination_folder)
+            task = merge_videos.delay(destination_folder)
+            print("After Merge...")
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
