@@ -49,8 +49,6 @@ docs/_build
 # Virtual Environment
 .venv
 
-# Selenium log
-geckodriver.log
-
-# Sample Videos
+# Project
 sample_videos/
+src/media/

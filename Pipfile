@@ -11,6 +11,8 @@ autopep8 = "*"
 pylint = "*"
 django = "*"
 celery = "*"
+django-widget-tweaks = "*"
+moviepy = "*"
 
 [requires]
 python_version = "3.6"
