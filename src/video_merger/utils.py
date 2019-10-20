@@ -26,12 +26,12 @@ def upload_original_videos(v, video_number, destination_folder):
 @shared_task
 def merge_videos(destination_folder):
     """Merge videos on alphabetical order"""
-    print("Inside merge_videos")
     video_name = f"{os.path.basename(os.path.normpath(destination_folder))}.mp4"
     destination_filepath = os.path.join(destination_folder, video_name)
     result = {'destination_filepath': destination_filepath}
     video_files = sorted(Path(destination_folder).glob('*.mp4'))
     clips_list = [VideoFileClip(destination_folder + '\\' + video.name) for video in video_files]
+    print(clips_list)
     merged_video = concatenate_videoclips(clips_list)
     merged_video.write_videofile(destination_filepath, codec='libx264', audio_codec='aac')
     return result

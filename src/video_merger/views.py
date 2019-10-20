@@ -16,6 +16,8 @@ class VideosUploadView(FormView):
         videos = request.FILES.getlist('file_field')
         if form.is_valid():
             destination_folder = create_destination_folder()
+            print("REQUEST ----> ", request)
+            print("VIDEOS ----> ", videos)
             for video_number, video in enumerate(videos, 1):
                 upload_original_videos(video, video_number, destination_folder)
             task = merge_videos.delay(destination_folder)

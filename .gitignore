@@ -52,3 +52,5 @@ docs/_build
 # Project
 sample_videos/
 src/media/
+src/static/
+node_modules/

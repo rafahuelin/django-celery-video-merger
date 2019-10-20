@@ -12,5 +12,6 @@ celery worker -A config --loglevel=info
 ```
 stop redis server
 ```
+Ctrl + c
 sudo service redis-server stop
 ```
